@@ -1,0 +1,20 @@
+page {
+  background-color: #FFFFFF;
+}
+
+.detail{
+  padding:15px;
+}
+
+.title{
+  font-size:1.2rem;
+  font-weight: bolder;
+}
+
+.info{
+    margin:15px 0px 30px;
+}
+
+.content{
+   font-size:1rem;
+}

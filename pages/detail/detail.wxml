@@ -1,0 +1,8 @@
+<view class="detail">
+    <view class="title">{{article.title}}</view>
+    <view class="info">
+        <text class="WText14PT mr10">作者：{{article.autor}}</text>
+        <text class="WText14PT">{{article.PublishDate}}</text>
+    </view>
+    <view class="content">{{article.content}}</view>
+</view>

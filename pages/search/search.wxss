@@ -1,0 +1,54 @@
+@import "../../utils/templates/accordion.wxss";
+
+.header {
+  width: 100%;
+  height: 50px;
+  background-image: url('');
+  background-color: #907df0;
+  padding-top:10px;
+}
+
+.search-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  margin:0 15px;
+  position: relative;
+}
+
+.search-words {
+  width: 70%;
+  height: 38px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px 0px 0px 4px;
+  padding-left:10px;
+  padding-right:28px;
+}
+
+.search-btn {
+  flex:1;
+  height: 40px;
+  color: #f6f6f6;
+  background-color: #fcb338;
+  line-height: 38px;
+  font-size: 16px;
+  border-radius: 0px 4px 4px 0px;
+}
+
+.no-result{
+   text-align:center;
+   margin-top:20px;
+}
+
+.close{
+   width:28px;
+   height:28px;
+   position: absolute;
+   top:7px;
+   right:20%;
+   z-index:999;
+}

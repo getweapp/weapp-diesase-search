@@ -1,0 +1,19 @@
+<import src="../../utils/templates/accordion.wxml" />
+
+<view class="header">
+  <view class="search-area">
+    <input placeholder="搜疾病 / 科普文章" class="search-words" id="search_words" focus="{{focus}}" name="search_words" value="{{searchWord}}" bindinput="inputHandler" bindfocus="focusHandler" bindblur="blurHandler" />
+    <view calss="clear" hidden="{{isHide}}"><image class="close" mode="scaleToFill" src="../../icons/close.png" bindtap="clearInput" /></view>
+    <button type="default" bindtap="excuteSearch" class="search-btn" hover-class="search-btn-hover" disabled="{{isDisabled}}">搜索</button>
+  </view>
+</view>
+
+<scroll-view style="height: 607px;" scroll-top="0" scroll-y="true">
+  <block wx:if="{{articleItem.total>0}}">
+    <template is="accordion_article" data="{{...articleItem}}" />
+  </block>
+  <block wx:if="{{diseaseItem.total>0}}">
+    <template is="accordion_disease" data="{{...diseaseItem}}" />
+  </block>
+  <view wx:if="{{noSearchResult}}" class="no-result">没有找到相关数据</view>
+</scroll-view>

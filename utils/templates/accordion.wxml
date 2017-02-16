@@ -1,0 +1,56 @@
+
+<!--
+  total: int
+  title: string
+  content: string
+-->
+<template name="accordion_disease">
+  <view class="warpper">
+    <view class="summary">相关疾病<text class="total">{{total}}</text>个</view>
+    <view class="inner">
+      <block wx:for="{{List}}" wx:for-item="diease" wx:for-index="i" wx:key="{{diease.Id}}">
+        <view class="diease">
+          <text class="title">{{diease.title}}</text>
+          <image hidden="{{diease.isHideDown}}" class="arrow-down" mode="scaleToFill" src="../../icons/arrow-down.png" bindtap="rollDown" data-sub="{{i}}"/>
+          <view hidden="{{diease.isHideContent}}"><text class="content">{{diease.content}}</text></view>
+          <view class="opretion" bindtap="rollUp" data-sub="{{i}}">
+            <image class="arrow-up" mode="scaleToFill" src="../../icons/arrow-up.png" hidden="{{diease.isHideUp}}"/>
+          </view>
+        </view>
+      </block>
+    </view>
+    <block wx:if="{{isShowDisease}}">
+      <view class="more" bindtap="getMoreDisease">
+        <text class="text-more">更多相关疾病</text>
+        <image class="arrow-more" mode="scaleToFill" src="../../icons/arrow-down.png" /> </view>
+    </block>
+  </view>
+</template>
+
+<!--
+  total: int
+  id:int
+  avatar: string
+  title: string
+  content: string
+-->
+<template name="accordion_article">
+  <view class="warpper">
+    <view class="summary">相关文章<text class="total">{{total}}</text>篇</view>
+    <view class="inner">
+      <block wx:for="{{List}}" wx:for-item="article" wx:for-index="i" wx:key="{{article.id}}">
+        <view class="article" bindtap="getDetail" data-id="{{article.Id}}">
+          <image class="article-avatar" mode="scaleToFill" src="{{article.avatar}}" />
+          <view class="article-info">
+            <text class="WText16PT article-title">{{article.title}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <block wx:if="{{isShowArticle}}">
+      <view class="more" bindtap="getMoreArticle">
+        <text class="text-more">更多相关文章</text>
+        <image class="arrow-more" mode="scaleToFill" src="../../icons/arrow-down.png" /> </view>
+    </block>
+  </view>
+</template>
